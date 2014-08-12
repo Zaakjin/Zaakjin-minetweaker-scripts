@@ -1,9 +1,13 @@
 val plateCopper = <ore:plateCopper>;
 val plateIron = <ore:plateIron>;
 val plateGold = <ore:plateGold>;
+val barsIron = <ore:barsIron>;
 val forgeHammer = <IC2:itemToolForgeHammer>;
 val cutter = <IC2:itemToolCutter>;
 
 plateCopper.add(<Steamcraft:steamcraftPlate>);
 plateIron.add(<Steamcraft:steamcraftPlate:2>);
 plateGold.add(<Steamcraft:steamcraftPlate:3>);
+
+barsIron.add(<minecraft:iron_bars>);
+barsIron.add(<chisel:chisel.fenceIron:*>);

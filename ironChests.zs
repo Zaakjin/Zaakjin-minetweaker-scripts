@@ -35,7 +35,7 @@ print("Adding new chest recipes");
 #Copper chest
 recipes.addShaped(<IronChest:BlockIronChest:3>,
 [   [plateCopper,                   plateCopper,        plateCopper],
-    [forgeHammer.anyDamage().transformDamage(1),  <minecraft:chest>,  null],
+    [forgeHammer.anyDamage().transformDamage(),  <minecraft:chest>,  null],
     [plateCopper,                   plateCopper,        plateCopper]]);
 
 recipes.addShaped(<IronChest:BlockIronChest:3>,
