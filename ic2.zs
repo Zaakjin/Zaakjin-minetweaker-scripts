@@ -1,4 +1,4 @@
-val glass =            <ore:glass>;
+val glass =             <ore:blockGlass>;
 val circuitBasic =      <ore:circuitBasic>;
 val circuitAdvanced =   <ore:circuitAdvanced>;
 val rotorCloth =        <CompactWindmills:WOOL>;
