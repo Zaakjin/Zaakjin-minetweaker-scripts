@@ -4,7 +4,7 @@ val plateIron = <ore:plateIron>;
 val plateGold = <ore:plateGold>;
 val plateObsidian = <ore:plateObsidian>;
 val diamond = <ore:gemDiamond>;
-val glass = <ore:glass>;
+val glass = <ore:blockGlass>;
 
 val forgeHammer = <IC2:itemToolForgeHammer>;
 val cutter = <IC2:itemToolCutter:*>;
@@ -29,6 +29,79 @@ recipes.removeShaped(<IronChest:BlockIronChest:1>);
 recipes.removeShaped(<IronChest:BlockIronChest:2>);
 recipes.removeShaped(<IronChest:BlockIronChest:5>);
 recipes.removeShaped(<IronChest:BlockIronChest:6>);
+
+print("Removing standart upgrade recipes");
+
+recipes.removeShaped(<IronChest:woodCopperUpgrade>);
+recipes.removeShaped(<IronChest:copperIronUpgrade>);
+recipes.removeShaped(<IronChest:ironGoldUpgrade>);
+recipes.removeShaped(<IronChest:goldDiamondUpgrade>);
+recipes.removeShaped(<IronChest:diamondCrystalUpgrade>);
+recipes.removeShaped(<IronChest:diamondObsidianUpgrade>);
+
+#Upgrades
+print("Adding new upgrade recipes");
+recipes.addShaped(<IronChest:woodCopperUpgrade>,
+[   [plateCopper,                   plateCopper,        plateCopper],
+    [forgeHammer.anyDamage().transformDamage(),  <ore:plankWood>,  null],
+    [plateCopper,                   plateCopper,        plateCopper]]);
+
+recipes.addShaped(<IronChest:woodCopperUpgrade>,
+[   [plateCopper,                   plateCopper,        plateCopper],
+    [null,      <ore:plankWood>,  forgeHammer.anyDamage().transformDamage()],
+    [plateCopper,                   plateCopper,        plateCopper]]);
+	
+recipes.addShaped(<IronChest:copperIronUpgrade>,
+[   [plateIron,                                     plateIron,                      plateIron],
+    [forgeHammer.anyDamage().transformDamage(1),    <ore:ingotCopper>,   null],
+    [plateIron,                                     plateIron,                      plateIron]]);
+
+recipes.addShaped(<IronChest:copperIronUpgrade>,
+[   [plateIron,     plateIron,                      plateIron],
+    [null,          <ore:ingotCopper>,   forgeHammer.anyDamage().transformDamage()],
+    [plateIron,     plateIron,                      plateIron]]);
+	
+recipes.addShaped(<IronChest:ironGoldUpgrade>,
+[   [plateGold,                                     plateGold,                      plateGold],
+    [forgeHammer.anyDamage().transformDamage(1),    <ore:ingotIron>,   null],
+    [plateGold,                                     plateGold,                      plateGold]]);
+
+recipes.addShaped(<IronChest:ironGoldUpgrade>,
+[   [plateGold,     plateGold,                      plateGold],
+    [null,          <ore:ingotIron>,   forgeHammer.anyDamage().transformDamage()],
+    [plateGold,     plateGold,                      plateGold]]);
+	
+recipes.addShaped(<IronChest:goldDiamondUpgrade>,
+[   [diamond,                                     diamond,                      diamond],
+    [forgeHammer.anyDamage().transformDamage(1),    <ore:ingotGold>,   null],
+    [diamond,                                     diamond,                      diamond]]);
+
+recipes.addShaped(<IronChest:goldDiamondUpgrade>,
+[   [diamond,     diamond,                      diamond],
+    [null,          <ore:ingotGold>,   forgeHammer.anyDamage().transformDamage()],
+    [diamond,     diamond,                      diamond]]);
+
+
+recipes.addShaped(<IronChest:diamondCrystalUpgrade>,
+[   [glass,                                         glass,                          glass],
+    [cutter.anyDamage().transformDamage(1),    plateObsidian,   null],
+    [glass,                                         glass,                          glass]]);
+
+recipes.addShaped(<IronChest:diamondCrystalUpgrade>,
+[   [glass,     glass,                          glass],
+    [null,      plateObsidian,   cutter.anyDamage().transformDamage()],
+    [glass,     glass,                          glass]]);
+
+
+recipes.addShaped(<IronChest:diamondObsidianUpgrade>,
+[   [plateObsidian,                            plateObsidian,                           plateObsidian],
+    [forgeHammer.anyDamage().transformDamage(1),    glass,            null],
+    [plateObsidian,                            plateObsidian,                           plateObsidian]]);
+
+recipes.addShaped(<IronChest:diamondObsidianUpgrade>,
+[   [plateObsidian,     plateObsidian,                          plateObsidian],
+    [null,              glass,           forgeHammer.anyDamage().transformDamage()],
+    [plateObsidian,     plateObsidian,                          plateObsidian]]);
 
 print("Adding new chest recipes");
 
